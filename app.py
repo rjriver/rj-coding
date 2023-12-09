@@ -42,7 +42,7 @@ def local_css(file_name):
     except FileNotFoundError:
         st.warning(f"Warning: CSS file {file_name} not found.")
 
-local_css("pages/style/style.css")
+local_css("style/style.css")
 
 st.header(":mailbox: Get In Touch With Me!")
 
