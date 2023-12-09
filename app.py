@@ -35,8 +35,14 @@ with st.container():
         Sometimes, we lose the game, and we will discuss our weaknesses together because we all believe the next time we can play better.
         """)
 
+def local_css(file_name):
+    try:
+        with open(file_name, 'r') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.warning(f"Warning: CSS file {file_name} not found.")
 
- 
+local_css("pages/style/style.css")
 
 st.header(":mailbox: Get In Touch With Me!")
 
@@ -52,15 +58,9 @@ contact_form = """
 
 st.markdown(contact_form, unsafe_allow_html=True)
 
-
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-local_css("pages/style/style.css")
-  
 with st.container():
     st.write("---")
+
  
 
 
